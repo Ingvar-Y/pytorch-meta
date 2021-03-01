@@ -165,6 +165,7 @@ class CIFAR100Dataset(Dataset):
     def __getitem__(self, index):
         image = Image.fromarray(self.data[index])
         target = (self.coarse_label_name, self.fine_label_name)
+        print(target)
 
         if self.transform is not None:
             image = self.transform(image)
