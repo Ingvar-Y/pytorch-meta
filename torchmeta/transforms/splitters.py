@@ -55,6 +55,7 @@ class Splitter(object):
                     'in task `{2}`.'.format(len(class_indices),
                     task.num_classes, task))
 
+        print(class_indices)
         return class_indices
 
     def __call__(self, task):
@@ -166,6 +167,7 @@ class ClassSplitter_(Splitter):
                 indices[split].extend([class_indices[idx] for idx in split_indices])
                 ptr += num_split
 
+        print(indices)
         return indices
 
     def get_indices_concattask(self, task):
