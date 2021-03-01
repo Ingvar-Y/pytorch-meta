@@ -197,6 +197,7 @@ class ClassSplitter_(Splitter):
                 ptr += num_split
             cum_size += num_samples
 
+        print(indices)
         return indices
 
 
