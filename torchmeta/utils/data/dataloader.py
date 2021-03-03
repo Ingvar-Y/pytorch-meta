@@ -18,6 +18,8 @@ class BatchMetaCollate(object):
         if isinstance(task, TorchDataset):
             return self.collate_fn([task[idx] for idx in range(len(task))])
         elif isinstance(task, OrderedDict):
+            print(OrderedDict([(key, self.collate_task(subtask))
+                for (key, subtask) in task.items()]))
             return OrderedDict([(key, self.collate_task(subtask))
                 for (key, subtask) in task.items()])
         else:
